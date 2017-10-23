@@ -33,6 +33,7 @@ a .fa-times {
     color: indianred;
     opacity: 0.6;
     font-size: 1.2em;
+    margin-right: 10px;
 }
 
 a .fa-times:hover {
@@ -48,12 +49,14 @@ h1 {
     font-family: 'Amatic SC', cursive;
     font-size: 2.5em;
     margin-top: 10px;
+    text-align: center;
 }
 
 h2 {
     font-family: 'Amatic SC', cursive;
     font-size: 2em;
     margin-top: 20px; 
+    text-align: center;
 }
 
 /* list items*/
@@ -106,9 +109,31 @@ input[type=submit]:focus{
 }
 
 
+.list-items input[type=text]{
+    width: 50%;
+    display: inline;
+    margin: 7px 10px 0px -17px;
+}
 
+#edit-button {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    font-size: 0.8em;
+    box-shadow: 2px 2px 2px #ddd;
+    border-radius: 3px;
+}
 
+#edit-button:focus{
+    background-color: #eceFF0;
+}
 
-
+.list-items p {
+    color: darkgreen;
+    text-align: center;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
 
  

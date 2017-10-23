@@ -2,32 +2,14 @@
     require 'partials/database.php';
     require 'partials/to_do_init.php';
     require 'partials/head.php';
-    
+
+
+
     ?>
 
     <main>
-
-        <div class="list-items">
-            <h1>To Do List</h1>
-
-            <?php foreach($todo as $todos):
-           ?>
-            <ul>
-                <li>
-                    <?= $todos['title'];?>
-                    <?= $todos['id']; ?>
-
-                    <a href="partials/done.php?id=<?= $todos['id']; ?>"><i class="fa fa-check" aria-hidden="true" title="Mark as done"></i></a>
-                    <a href="partials/remove.php?id=<?= $todos['id']; ?>"><i class="fa fa-times" aria-hidden="true" title="Remove from list"></i></a>
-                </li>
-
-            </ul>
-
-            <?php endforeach; ?>
-
-        </div>
-        
-        <div class="form">
+          
+           <div class="form">
             <form action="partials/to_do.php" method="POST">
 
                 <input type="text" name="user_name" placeholder="Type your username" autocomplete="off" required>
@@ -37,6 +19,49 @@
             </form>
 
         </div>
+        
+
+        <div class="list-items">
+            <h1>To Do List</h1>
+
+           
+           
+           
+            <?php 
+           
+            
+            if ( isset($_GET['success'])){
+                echo "<p> Your to-do was added successfully! </p>";
+            }
+    
+            
+            
+            foreach($todo as $todos):
+           ?>
+            <ul>
+                <li>
+                    <?= $todos['title'] ;?>
+                    <?= $todos['id']; ?>
+
+                    <a href="partials/done.php?id=<?= $todos['id']; ?>"><i class="fa fa-check" aria-hidden="true" title="Mark as done"></i></a>
+                    <a href="partials/remove.php?id=<?= $todos['id']; ?>"><i class="fa fa-times" aria-hidden="true" title="Remove from list"></i></a>
+                    <br/>
+                    <!--<input type="text" name="" placeholder="Edit your to-do here">
+                    
+                    <a href="partials/edit.php?title= &id= " id="edit-button">Edit</a>-->
+                    
+                </li>
+                
+
+            </ul>
+
+            <?php endforeach; ?>
+
+        </div>
+        
+        
+        
+     
 
         <div class="done">
             <h2>Completed to-do's</h2>
@@ -78,6 +103,8 @@
        
        Message after succesful to do
        
+       
+       User change title: input-field after every to-do, sends to another /partials.php, grabs the _$GET, set to UPDATE todo SET title=$_GET WHERE title=?
        
        -->
 
