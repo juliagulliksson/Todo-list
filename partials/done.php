@@ -9,4 +9,6 @@ $id = $_GET['id'];
 
 $statement = $pdo->prepare("UPDATE todo SET completed = 1 WHERE id = $id");
 $statement->execute();
-$todo = $statement->fetchAll(PDO::FETCH_ASSOC);
+//$todo = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+

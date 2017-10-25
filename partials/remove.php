@@ -11,4 +11,4 @@ $id = $_GET['id'];
 
 $statement = $pdo->prepare("DELETE FROM todo WHERE id = $id");
 $statement->execute();
-$todo = $statement->fetchAll(PDO::FETCH_ASSOC);
+//$todo = $statement->fetchAll(PDO::FETCH_ASSOC);

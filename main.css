@@ -2,26 +2,33 @@ body {
     background-color: #eceFF0;
 }
 
-.list-items, .done, .form {
-    max-width: 500px;
-    margin: 10px auto;
-    background-color: #FFF;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 3px;
-    box-shadow: 3px 3px lightgray;
-}
-
-
 body, input {
     font-family: 'Open Sans', sans-serif;
     color: #363639;
 }
+
+.list-items, .done, .form {
+    margin: 10px auto;
+    background-color: #FFF;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    box-shadow: 3px 3px lightgray;
+    max-width: 750px;
+}
+
+
+.list-items-wrap, .done-wrap{
+    max-width: 600px;
+    margin: 0px auto;
+}
+
+/*ICONS*/
+
 a .fa-check {
     color: green;
     opacity: 0.6;
-    margin: 0 10px;
+    //margin: 0 10px;
     font-size: 1.2em;
 }
 
@@ -33,15 +40,36 @@ a .fa-times {
     color: indianred;
     opacity: 0.6;
     font-size: 1.2em;
-    margin-right: 10px;
 }
 
 a .fa-times:hover {
     opacity: 1;
 }
 
-.done a .fa-times {
-    margin: 0 10px;
+a .fa-pencil {
+    color: #cc9806;
+    opacity: 0.6;
+}
+
+a .fa-pencil:hover {
+    opacity: 1;
+}
+
+.list-items a .fa, .done a .fa {
+   float: right;
+   margin: 0 15px;
+   font-size: 1.2em;
+}
+
+.clear {
+    clear: both;
+}
+
+/*TEXT*/
+
+.done p {
+    text-align: center;
+    font-weight: 700;
 }
 
 
@@ -54,12 +82,12 @@ h1 {
 
 h2 {
     font-family: 'Amatic SC', cursive;
-    font-size: 2em;
-    margin-top: 20px; 
+    font-size: 2.3em;
+    margin-top: 0px; 
     text-align: center;
 }
 
-/* list items*/
+/* List items*/
 
 ul li {
     padding: 0;
@@ -67,40 +95,68 @@ ul li {
 }
 
 ul {
-    padding-left: 19px;
     padding-bottom: 10px;
     margin-bottom: 0px;
+    margin-left: 20px;
 }
 
 
-/*input*/
+/*FORMS*/
+
+.form-wrap {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.form-wrap form {
+    max-width: 650px;
+    text-align: center;
+}
 
 input[type=text]{
     border: 0;
-    border-bottom: 1px dashed #ccc;
+    border: 1px dashed #b3b3b7;
     padding: 10px;
     font-size: 0.9em;
-    display: block;
-    width: 95.5%;
-    background-color: #f2f2f2;
-    margin-bottom: 10px;
     border-radius: 2px;
+    background-color: #f2f2f2;
+}
+
+.form-wrap input[type=text]{
+    width: 30%;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 10px;
 }
 
 input[type=text]:focus{
     outline: none;
 }
 
+.form-wrap input[type=submit]{
+    width: 20%;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.form-wrap p {
+    color: indianred;
+    text-align: center;
+    font-weight: 700;
+}
+
 input[type=submit]{
     background-color: #FFF;
     padding: 5px 10px;
     border: 1px solid #ddd;
-    width: 100%;
-    margin-top: 10px;
     cursor: pointer;
     font-size: 1em;
     box-shadow: 2px 2px 2px #ddd;
     border-radius: 3px;
+}
+
+.list-items input[type=submit]{
+    width: 19%;
 }
 
 input[type=submit]:focus{
@@ -109,25 +165,13 @@ input[type=submit]:focus{
 }
 
 
+
 .list-items input[type=text]{
     width: 50%;
     display: inline;
     margin: 7px 10px 0px -17px;
 }
 
-#edit-button {
-    text-decoration: none;
-    color: black;
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    font-size: 0.8em;
-    box-shadow: 2px 2px 2px #ddd;
-    border-radius: 3px;
-}
-
-#edit-button:focus{
-    background-color: #eceFF0;
-}
 
 .list-items p {
     color: darkgreen;
@@ -136,4 +180,3 @@ input[type=submit]:focus{
     font-weight: 700;
 }
 
- 
