@@ -61,6 +61,15 @@ a .fa-pencil:hover {
    font-size: 1.2em;
 }
 
+a .fa-arrow-down, a .fa-arrow-up {
+    color: #01665f;
+    opacity: 0.6;
+}
+
+a .fa-arrow-down:hover, a .fa-arrow-up:hover {
+    opacity: 1;
+}
+
 .clear {
     clear: both;
 }
@@ -97,7 +106,6 @@ ul li {
 ul {
     padding-bottom: 10px;
     margin-bottom: 0px;
-    margin-left: 20px;
 }
 
 
@@ -173,10 +181,27 @@ input[type=submit]:focus{
 }
 
 
-.list-items p {
+.list-items p.success {
     color: darkgreen;
     text-align: center;
     padding-bottom: 10px;
     font-weight: 700;
 }
 
+h3 {
+    color: gray;
+    font-size: 1em;
+    margin-left: 9px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.list-items .priority-order{
+    color: #01665f;
+    font-size: 0.8em;
+}
+
+.border{
+   border-bottom: 2px solid #eceFF0;
+   margin-top: 15px;
+}

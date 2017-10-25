@@ -3,6 +3,7 @@
     require 'partials/database.php';
     require 'partials/to_do_init.php';
    
+   
     ?>
 
     <main>
@@ -38,22 +39,25 @@
 
 
 
-                <?php 
+                <?php
 
-
-                if ( isset($_GET['success'])){
-                    echo "<p> Your to-do was added successfully! </p>";
+                if (isset($_GET['success'])){
+                    echo "<p class='success'> Your to-do was added successfully! </p>";
                 }
+                ?>
 
-
+                
+                <h3>Priority: <span class="priority-order">High</span></h3>
+                
+                <?php
 
                 foreach($todo as $todos):
                 ?>
+                   
                     <ul>
                         <li>
                             <?= $todos['title'] ;?>
-                            <?= $todos['id']; ?>
-
+                            
                             
                             <a href="partials/remove.php?id=<?= $todos['id']; ?>"><i class="fa fa-times" aria-hidden="true" title="Remove from list"></i></a>
 
@@ -64,6 +68,8 @@
                             <?php endif ?>
                             
                             <a href="partials/done.php?id=<?= $todos['id']; ?>"><i class="fa fa-check" aria-hidden="true" title="Mark as done"></i></a>
+                            
+                            <a href="partials/priority_down.php?id=<?= $todos['id'] ?>"><i class="fa fa-arrow-down" aria-hidden="true" title="Change priority"></i></a>
                             
                             <div class="clear"></div>
 
@@ -84,14 +90,58 @@
                     </ul>
 
                     <?php endforeach; ?>
+                    
+                  
+                    
+                    <div class="border"></div>
+                    
+                    <h3>Priority: <span class="priority-order">Low</span></h3>
+                    
+                    <?php
+                    foreach($todo_low as $todos_low):
+                ?>
+                   
+                    <ul>
+                        <li>
+                            <?= $todos_low['title'] ;?>
+                            
+                            
+                            <a href="partials/remove.php?id=<?= $todos_low['id']; ?>"><i class="fa fa-times" aria-hidden="true" title="Remove from list"></i></a>
+
+                            <?php
+                            if(!isset($_GET['edit'])): ?>
+                            <a href="index.php?edit"><i class="fa fa-pencil" aria-hidden="true" title="Edit"></i></a>
+
+                            <?php endif ?>
+                            
+                            <a href="partials/done.php?id=<?= $todos_low['id']; ?>"><i class="fa fa-check" aria-hidden="true" title="Mark as done"></i></a>
+                            
+                            <a href="partials/priority_up.php?id=<?= $todos_low['id'] ?>"><i class="fa fa-arrow-up" aria-hidden="true" title="Change priority"></i></a>
+                            
+                            <div class="clear"></div>
+
+                            <?php
+                            if(isset($_GET['edit'])): 
+                            ?>
+
+                                <form action="partials/edit.php?id=<?= $todos_low['id']; ?>" method="POST">
+                                    <input type="text" name="edit_title" placeholder="Edit your to-do here" autocomplete="off">
+                                    <input type="submit" name="send" value="Edit">
+                                </form>
+
+                            <?php endif;?>
+
+                        </li>
+
+
+                    </ul>
+
+                    <?php endforeach; ?>
+                    
                 
             </div>
             
         </div>
-
-
-
-
 
         <div class="done">
             <h2>Completed to-do's</h2>
@@ -99,9 +149,7 @@
             <div class="done-wrap">
                 
                 <?php
-                $statement = $pdo->prepare("SELECT title, id FROM todo WHERE completed=1 ORDER BY id DESC");
-                $statement->execute();
-                $todo_completed = $statement->fetchAll(PDO::FETCH_ASSOC);
+                
 
                 if($todo_completed != NULL){
                     for($i = 0; $i < count($todo_completed); $i++):
@@ -130,9 +178,8 @@
         </div>
         
         <!-- change pdo to :title etc
-        Priority
-        
-        select * from tablename order by priority='High' DESC, priority='Medium' DESC, priority='Low" DESC
+        Priority sorted by senast tillagd, kanske datum-kolumn?
+        Functions?
          
           
            
