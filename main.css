@@ -4,7 +4,6 @@ body {
 
 body, input {
     font-family: 'Open Sans', sans-serif;
-    color: #363639;
 }
 
 .list-items, .done, .form {
@@ -13,10 +12,9 @@ body, input {
     padding: 20px;
     box-sizing: border-box;
     border-radius: 3px;
-    box-shadow: 3px 3px lightgray;
+    box-shadow: 3px 3px 5px lightgray;
     max-width: 750px;
 }
-
 
 .list-items-wrap, .done-wrap{
     max-width: 600px;
@@ -25,37 +23,36 @@ body, input {
 
 /*ICONS*/
 
-a .fa-check {
+.fa-check {
     color: green;
     opacity: 0.6;
-    //margin: 0 10px;
     font-size: 1.2em;
 }
 
-a .fa-check:hover {
+.fa-check:hover {
     opacity: 1;
 }
 
-a .fa-times {
+.fa-times {
     color: indianred;
     opacity: 0.6;
     font-size: 1.2em;
 }
 
-a .fa-times:hover {
+.fa-times:hover {
     opacity: 1;
 }
 
-a .fa-pencil {
+.fa-pencil {
     color: #cc9806;
     opacity: 0.6;
 }
 
-a .fa-pencil:hover {
+.fa-pencil:hover {
     opacity: 1;
 }
 
-.list-items a .fa, .done a .fa {
+.fa {
    float: right;
    margin: 0 15px;
    font-size: 1.2em;
@@ -81,7 +78,6 @@ a .fa-arrow-down:hover, a .fa-arrow-up:hover {
     font-weight: 700;
 }
 
-
 h1 {
     font-family: 'Amatic SC', cursive;
     font-size: 2.5em;
@@ -96,6 +92,26 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    color: gray;
+    font-size: 1em;
+    margin-left: 9px;
+    font-weight: 400;
+    text-align: center;
+}
+
+p.success {
+    color: darkgreen;
+    text-align: center;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+.priority-order{
+    color: #01665f;
+    font-size: 0.8em;
+}
+
 /* List items*/
 
 ul li {
@@ -106,6 +122,11 @@ ul li {
 ul {
     padding-bottom: 10px;
     margin-bottom: 0px;
+}
+
+.border{
+   border-bottom: 2px solid #eceFF0;
+   margin-top: 15px;
 }
 
 
@@ -172,36 +193,9 @@ input[type=submit]:focus{
     background-color: #eceFF0;
 }
 
-
-
 .list-items input[type=text]{
     width: 50%;
     display: inline;
     margin: 7px 10px 0px -17px;
 }
 
-
-.list-items p.success {
-    color: darkgreen;
-    text-align: center;
-    padding-bottom: 10px;
-    font-weight: 700;
-}
-
-h3 {
-    color: gray;
-    font-size: 1em;
-    margin-left: 9px;
-    font-weight: 400;
-    text-align: center;
-}
-
-.list-items .priority-order{
-    color: #01665f;
-    font-size: 0.8em;
-}
-
-.border{
-   border-bottom: 2px solid #eceFF0;
-   margin-top: 15px;
-}

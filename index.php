@@ -2,14 +2,10 @@
     require 'partials/head.php';
     require 'partials/database.php';
     require 'partials/to_do_init.php';
-   
-   
-    ?>
+?>
 
     <main>
-
-
-
+       
         <div class="form">
            
                 <h1>To Do List</h1>
@@ -17,10 +13,9 @@
                    <?php
                     
                    if(isset($_GET['wrong'])){
-                       echo "<p>This title already exists, try again</p>";
-                   }
-                       
-                       ?>
+                       echo "<p>Title already exists, try again</p>";
+                   } 
+                    ?>
                     <form action="partials/to_do.php" method="POST">
 
                         <input type="text" name="user_name" placeholder="Type your username" autocomplete="off" required>
@@ -29,35 +24,27 @@
 
                     </form>
                 </div>
-
         </div>
-
 
         <div class="list-items">
             <h2>To Do</h2>
             <div class="list-items-wrap">
 
-
-
                 <?php
-
                 if (isset($_GET['success'])){
                     echo "<p class='success'> Your to-do was added successfully! </p>";
-                }
+                } 
                 ?>
-
                 
                 <h3>Priority: <span class="priority-order">High</span></h3>
                 
                 <?php
-
                 foreach($todo as $todos):
                 ?>
                    
                     <ul>
                         <li>
                             <?= $todos['title'] ;?>
-                            
                             
                             <a href="partials/remove.php?id=<?= $todos['id']; ?>"><i class="fa fa-times" aria-hidden="true" title="Remove from list"></i></a>
 
@@ -90,8 +77,6 @@
                     </ul>
 
                     <?php endforeach; ?>
-                    
-                  
                     
                     <div class="border"></div>
                     
@@ -144,13 +129,12 @@
         </div>
 
         <div class="done">
+           
             <h2>Completed to-do's</h2>
             
             <div class="done-wrap">
                 
                 <?php
-                
-
                 if($todo_completed != NULL){
                     for($i = 0; $i < count($todo_completed); $i++):
                 ?>
@@ -163,13 +147,11 @@
                         </li>
                     </ul>
 
-                    <?php    
-
-
+                    <?php   
                     endfor; 
                 }else{
-                            echo "<p>You have not completed any to-do's yet</p>";
-                        }
+                    echo "<p>You have not completed any to-do's yet</p>";
+                }
 
                 ?>
 
@@ -177,9 +159,10 @@
 
         </div>
         
-        <!-- change pdo to :title etc
-        Priority sorted by senast tillagd, kanske datum-kolumn?
-        Functions?
+        <!-- 
+        Reset ID?
+        Is priority correct?
+        If no functions, delete functions.php
          
           
            

@@ -4,8 +4,10 @@ require 'database.php';
 
 $title = $_POST['add_title'];
 
-$query = $pdo->prepare("SELECT * FROM todo WHERE title = '$title'");
-$query->execute();
+//same title query
+$query = $pdo->prepare("SELECT * FROM todo WHERE title = :title");
+$query->execute(array(
+":title" => $title));
 $count = $query->rowCount();
 
 if($count > 0){
@@ -19,8 +21,6 @@ if($count > 0){
         ":createdBy" => $_POST['user_name']
     ));
     $todo = $statement->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($_POST);
-    
 }
 
 
