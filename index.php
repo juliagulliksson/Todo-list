@@ -159,14 +159,6 @@
 
         </div>
         
-        <!-- 
-        Reset ID?
-        Is priority correct?
-        If no functions, delete functions.php
-         
-          
-           
-             -->
 
     </main>
     

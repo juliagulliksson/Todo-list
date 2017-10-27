@@ -20,7 +20,6 @@ if($count > 0){
         ":title" => $title,
         ":createdBy" => $_POST['user_name']
     ));
-    $todo = $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
 
